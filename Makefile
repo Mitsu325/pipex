@@ -10,43 +10,44 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	pipex
-SRC		=	src
-OBJ		=	obj
+NAME		=	pipex
+SRC			=	src
+OBJ			=	obj
 
-FILES	=	$(SRC)/main.c
+SRC_FILE	=	main.c error_handler.c
 
-OBJ_DIR	=	$(foreach dir, $(SUB_DIR), $(addprefix $(OBJ)/, $(dir)))
-OBJS	=	$(subst $(SRC), $(OBJ), $(FILES:.c=.o))
+FILES		=	$(foreach file, $(SRC_FILE), $(SRC)/$(file))
 
-CC		=	gcc
-CFLAGS	=	-Wall -Wextra -Werror
+OBJ_DIR		=	$(foreach dir, $(SUB_DIR), $(addprefix $(OBJ)/, $(dir)))
+OBJS		=	$(subst $(SRC), $(OBJ), $(FILES:.c=.o))
 
-RM		=	/bin/rm -rf
-NORM	=	norminette
+CC			=	gcc
+CFLAGS		=	-Wall -Wextra -Werror
 
-$(OBJ)/%.o:	$(SRC)/%.c
-			@mkdir -p $(OBJ) $(OBJ_DIR)
-			@$(CC) $(CFLAGS) -c $< -o $@
+RM			=	/bin/rm -rf
 
-all:		$(NAME)
-			@echo "\n\e[96m----------------------------------------"
-			@echo "\e[96m--------------- MAKE PIPEX ---------------"
-			@echo "\e[96m----------------------------------------\n"
+$(OBJ)/%.o:		$(SRC)/%.c
+				@mkdir -p $(OBJ) $(OBJ_DIR)
+				@$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME):	$(OBJS)
-			@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+all:			$(NAME)
+				@echo "\n\e[96m----------------------------------------"
+				@echo "\e[96m--------------- MAKE PIPEX ---------------"
+				@echo "\e[96m----------------------------------------\n"
+
+$(NAME):		$(OBJS)
+				@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 clean:
-			@$(RM) $(OBJS)
-			@$(RM) $(OBJ)
+				@$(RM) $(OBJS)
+				@$(RM) $(OBJ)
 
-fclean:		clean
-			@$(RM) $(NAME)
-			@echo "\n\e[95m----------------------------------------"
-			@echo "\e[95m------------- CLEANING DONE ------------"
-			@echo "\e[95m----------------------------------------\n"
+fclean:			clean
+				@$(RM) $(NAME)
+				@echo "\n\e[95m----------------------------------------"
+				@echo "\e[95m------------- CLEANING DONE ------------"
+				@echo "\e[95m----------------------------------------\n"
 
-re:			fclean all
+re:				fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:			all clean fclean re
