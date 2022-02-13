@@ -18,12 +18,7 @@ int	main(int argc, char **argv, char **envp)
 	int		fd[2];
 	char	**path;
 
-	// TODO: REFATORAÇÃO DA VALIDAÇÃO EM UM NOVO ARQUIVO
 	if (argc != 5)
-	{
-		// TODO: CRIAR CONTROLE DE MENSAGENS DE ERRO
-		exit_program(BAD_ARGUMENTS, "Ex: ./pipex file1 cmd1 cmd2 file2")
-		exit(EXIT_FAILURE);
-	}
+		error_handler("Bad arguments", "Ex: ./pipex file1 cmd1 cmd2 file2");
 	return (EXIT_SUCCESS);
 }
