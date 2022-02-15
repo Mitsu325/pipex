@@ -1,20 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmitsuko <pmitsuko@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 20:17:37 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/13 20:17:37 by pmitsuko         ###   ########.fr       */
+/*   Created: 2022/02/14 21:59:51 by pmitsuko          #+#    #+#             */
+/*   Updated: 2022/02/14 21:59:51 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* The putchar_fd() function write char 'ch' to the given file descriptor. */
+/* The strchr() function returns a pointer to the first occurrence of the
+char 'c' in string 's'.
+*/
+/* Return a pointer to the corresponding character,
+or NULL if the character was not found.
+*/
 
 #include "libft.h"
 
-void	ft_putchar_fd(char ch, int fd)
+char	*ft_strchr(const char *s, int c)
 {
-	write(fd, &ch, 1);
+	char	*str;
+
+	str = (char *)s;
+	while (*str != c)
+	{
+		if (*str == '\0')
+			return (NULL);
+		str++;
+	}
+	return (str);
 }

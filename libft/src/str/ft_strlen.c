@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmitsuko <pmitsuko@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 20:17:37 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/13 20:17:37 by pmitsuko         ###   ########.fr       */
+/*   Created: 2022/02/14 22:10:13 by pmitsuko          #+#    #+#             */
+/*   Updated: 2022/02/14 22:10:13 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* The putchar_fd() function write char 'ch' to the given file descriptor. */
+/* The strlen() function calculates the length of the character string 'str', 
+without count the trailing "\0" null byte.
+*/
+/* Returns the number of characters in the string s.
+*/
 
-#include "libft.h"
-
-void	ft_putchar_fd(char ch, int fd)
+int	ft_strlen(const char *str)
 {
-	write(fd, &ch, 1);
+	int	len;
+
+	len = 0;
+	while (*(str + len))
+		len++;
+	return (len);
 }

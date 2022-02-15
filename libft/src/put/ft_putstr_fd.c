@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* The putstr_fd() function write string 'str' to the given file descriptor. */
+
 #include "libft.h"
 
 void	ft_putstr_fd(char *str, int fd)

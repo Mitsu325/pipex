@@ -16,8 +16,10 @@ OBJ			= obj
 SUB_DIR		= put
 
 PUT_F		= ft_putchar_fd.c ft_putstr_fd.c
+STR_F		= ft_split.c ft_strchr.c ft_strlen.c ft_strnstr.c ft_substr.c
 
 FILES		= $(foreach file, $(PUT_F), $(SRC)/put/$(file))
+FILES		+= $(foreach file, $(STR_F), $(SRC)/str/$(file))
 
 OBJ_DIR		= $(foreach dir, $(SUB_DIR), $(addprefix $(OBJ)/, $(dir)))
 OBJS		= $(subst $(SRC), $(OBJ), $(FILES:.c=.o))

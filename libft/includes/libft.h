@@ -14,8 +14,15 @@
 # define LIBFT_H
 
 # include <unistd.h>
+# include <stdlib.h>
 
 void	ft_putchar_fd(char ch, int fd);
 void	ft_putstr_fd(char *str, int fd);
+
+char	**ft_split(char const *s, char c);
+char	*ft_strchr(const char *s, int c);
+int		ft_strlen(const char *str);
+char	*ft_strnstr(const char *str, const char *find, size_t len);
+char	*ft_substr(char const *s, int start, int len);
 
 #endif
