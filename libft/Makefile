@@ -6,14 +6,14 @@
 #    By: pmitsuko <pmitsuko@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/07 22:27:52 by patricia          #+#    #+#              #
-#    Updated: 2022/02/14 01:33:19 by pmitsuko         ###   ########.fr        #
+#    Updated: 2022/02/15 02:32:43 by pmitsuko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libft.a
 SRC			= src
 OBJ			= obj
-SUB_DIR		= put
+SUB_DIR		= put str
 
 PUT_F		= ft_putchar_fd.c ft_putstr_fd.c
 STR_F		= ft_split.c ft_strchr.c ft_strlen.c ft_strnstr.c ft_substr.c
