@@ -49,19 +49,29 @@ void	error_safe_exit(char **env_path)
 	exit(EXIT_FAILURE);
 }
 
+// TODO: create child process and parent process
 int	main(int argc, char **argv, char **envp)
 {
-	// int		pid;
+	int		pid;
 	int		fd[2];
 	char	**env_path;
+	int		status;
 
 	if (argc != 5)
 		error_message("Wrong arguments", "./pipex file1 cmd1 cmd2 file2");
 	env_path = find_env_path(envp);
 	if (pipe(fd) == -1)
 		error_safe_exit(env_path);
-	ft_putstr_fd(env_path[1], STDOUT);
-	ft_putstr_fd("\n", STDOUT);
+	pid = fork();
+	if (pid == -1)
+		error_safe_exit(env_path);
+	if (pid == 0)
+		// child_process()
+	waitpid(pid, &status, 0);
+	// parent_process()
+	close(fd[0]);
+	close(fd[1]);
+	free_split(env_path);
 	ft_putstr_fd(argv[0], STDOUT);
 	ft_putstr_fd("\n", STDOUT);
 	return (EXIT_SUCCESS);

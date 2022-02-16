@@ -20,8 +20,11 @@
 # define STDOUT 1
 # define STDERR 2
 
+#include <unistd.h>
 # include <stdlib.h>
 #include <stdio.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 
 # include "libft.h"
 
