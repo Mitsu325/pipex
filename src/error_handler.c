@@ -12,11 +12,13 @@
 
 #include "pipex.h"
 
-void	error_handler(char *error_msg, char *help_msg)
+/* The error_message() function print the error and helper message. */
+void	error_message(char *error_msg, char *help_msg)
 {
 	ft_putstr_fd("\e[91mError: ", STDERR);
 	ft_putstr_fd(error_msg, STDERR);
 	ft_putstr_fd("\n\e[0m", STDERR);
+	ft_putstr_fd("Example: ", STDOUT);
 	ft_putstr_fd(help_msg, STDOUT);
 	ft_putstr_fd("\n", STDOUT);
 	exit(EXIT_FAILURE);

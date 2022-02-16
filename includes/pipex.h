@@ -24,6 +24,6 @@
 
 # include "libft.h"
 
-void	error_handler(char *error_msg, char *help_msg);
+void	error_message(char *error_msg, char *help_msg);
 
 #endif
