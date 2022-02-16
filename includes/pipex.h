@@ -6,7 +6,7 @@
 /*   By: pmitsuko <pmitsuko@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:29:25 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/15 01:08:15 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/16 01:43:50 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # define STDERR 2
 
 # include <stdlib.h>
+#include <stdio.h>
 
 # include "libft.h"
 
