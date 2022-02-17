@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pmitsuko <pmitsuko@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/13 21:09:44 by pmitsuko          #+#    #+#              #
-#    Updated: 2022/02/14 01:33:12 by pmitsuko         ###   ########.fr        #
+#    Updated: 2022/02/16 23:27:22 by pmitsuko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		=	pipex
 SRC			=	src
 OBJ			=	obj
 
-SRC_FILE	=	main.c error_handler.c
+SRC_FILE	=	main.c error_handler.c utils.c
 
 FILES		=	$(foreach file, $(SRC_FILE), $(SRC)/$(file))
 
@@ -26,7 +26,8 @@ LIB_FLAGS	=	-L $(LIBFT_DIR) -lft -L /usr/local/lib
 HEADER		=	-I includes -I $(LIBFT_DIR)/includes/
 
 CC			=	gcc
-CFLAGS		=	-Wall -Wextra -Werror -g
+CFLAGS		=	-Wall -Wextra -Werror -g 
+# -fsanitize=address
 
 RM			=	rm -rf
 
@@ -59,4 +60,12 @@ fclean:			clean
 
 re:				fclean all
 
-.PHONY:			all clean fclean re
+memory:			
+				@valgrind ./pipex 1 2 3 4
+memoryfull:		
+				@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt ./pipex 1 2 3 4
+
+relog:
+				@$(RM) valgrind-out.txt
+
+.PHONY:			all clean fclean re memory memoryfull relog

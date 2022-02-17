@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmitsuko <pmitsuko@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:29:25 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/16 01:43:50 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/17 08:46:39 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,23 @@
 # define STDOUT 1
 # define STDERR 2
 
+// Permissions file read and write
+# define MODE_RW 0666
+
 #include <unistd.h>
+#include <fcntl.h>
 # include <stdlib.h>
 #include <stdio.h>
 #include <sys/types.h>
+#include <sys/stat.h>
 #include <sys/wait.h>
 
 # include "libft.h"
 
 void	error_message(char *error_msg, char *help_msg);
+void	error_safe_exit(char **env_path);
+
+char	**find_env_path(char **envp);
+void	free_split(char **table);
 
 #endif

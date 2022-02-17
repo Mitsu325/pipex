@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pmitsuko <pmitsuko@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/07 22:27:52 by patricia          #+#    #+#              #
-#    Updated: 2022/02/15 02:32:43 by pmitsuko         ###   ########.fr        #
+#    Updated: 2022/02/17 19:33:21 by pmitsuko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ OBJ			= obj
 SUB_DIR		= put str
 
 PUT_F		= ft_putchar_fd.c ft_putstr_fd.c
-STR_F		= ft_split.c ft_strchr.c ft_strlen.c ft_strnstr.c ft_substr.c
+STR_F		= ft_split.c ft_strchr.c ft_strlen.c ft_strnstr.c ft_substr.c \
+				ft_strjoin.c
 
 FILES		= $(foreach file, $(PUT_F), $(SRC)/put/$(file))
 FILES		+= $(foreach file, $(STR_F), $(SRC)/str/$(file))
