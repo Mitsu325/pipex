@@ -6,7 +6,7 @@
 #    By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/13 21:09:44 by pmitsuko          #+#    #+#              #
-#    Updated: 2022/02/16 23:27:22 by pmitsuko         ###   ########.fr        #
+#    Updated: 2022/02/17 21:06:56 by pmitsuko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,9 +61,9 @@ fclean:			clean
 re:				fclean all
 
 memory:			
-				@valgrind ./pipex 1 2 3 4
+				@valgrind ./pipex test "ls -l" "wc -l" test_my_output
 memoryfull:		
-				@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt ./pipex 1 2 3 4
+				@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt ./pipex test "ls -l" "wc -l" test_my_output
 
 relog:
 				@$(RM) valgrind-out.txt
