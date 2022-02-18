@@ -1,30 +1,31 @@
 #!/bin/bash
 
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[0;33m'
-BLUE='\033[0;34m'
-PURPLE='\033[0;35m'
-CYAN='\033[0;36m'
-NC='\033[0m'
+RED='\e[91m'
+GREEN='\e[92m'
+YELLOW='\e[93m'
+BLUE='\e[94m'
+PURPLE='\e[95m'
+CYAN='\e[96m'
+NC='\e[0m'
 NL='\n'
 
-echo -e $GREEN"TEST START"$NC
-echo -n "making...."
+echo -e $CYAN"=============================="$NC$NL
+echo -e $CYAN"--------- TEST START ---------"$NC$NL
 
 make > /dev/null
 
-echo -e $GREEN"SUCCESS"$NC
+echo -e $CYAN"---- SUCCESS - MAKE PIPEX ----"$NC$NL
+echo -e $CYAN"=============================="$NC$NL
 
-echo -e "my${NL}name${NL}is${NL}pmitsuko" > test_input
+echo -e "my${NL}name${NL}is${NL}pmitsuko" > input_file
 
 check_diff() {
-	RESULT=$(diff test_correct_output test_my_output)
+	RESULT=$(diff correct_output_file my_output_file)
 	echo ------------------------------
-	echo -e ${CYAN}CORRECT RESULT${NC}
-	cat test_correct_output
-	echo -e ${CYAN}MY RESULT${NC}
-	cat test_my_output
+	echo -e ${PURPLE}CORRECT RESULT${NC}
+	cat correct_output_file
+	echo -e ${PURPLE}MY RESULT${NC}
+	cat my_output_file
 	if [ -z "$RESULT" ]; then
 		echo -e $GREEN"case $1 SUCCESS"$NC
 	else
@@ -33,20 +34,20 @@ check_diff() {
 }
 
 
-< test_input cat | cat > test_correct_output
-./pipex test_input cat cat test_my_output
+< input_file cat | cat > correct_output_file
+./pipex input_file cat cat my_output_file
 check_diff "1"
 
-< test_input ls -l | wc -l > test_correct_output
-./pipex test_input "ls -l" "wc -l" test_my_output
+< input_file ls -l | wc -l > correct_output_file
+./pipex input_file "ls -l" "wc -l" my_output_file
 check_diff "2"
 
-< test_input grep a1 | wc -w > test_correct_output
-./pipex test_input "grep a1" "wc -w" test_my_output
+< input_file grep a1 | wc -w > correct_output_file
+./pipex input_file "grep a1" "wc -w" my_output_file
 check_diff "3"
 
-< test_input cat 123 | cat > test_correct_output
-./pipex test_input "cat 123" cat test_my_output
+< input_file cat 123 | cat > correct_output_file
+./pipex input_file "cat 123" cat my_output_file
 check_diff "4"
 
-rm test_input test_correct_output test_my_output
+rm input_file correct_output_file my_output_file
