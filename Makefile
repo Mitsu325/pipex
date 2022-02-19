@@ -6,7 +6,7 @@
 #    By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/13 21:09:44 by pmitsuko          #+#    #+#              #
-#    Updated: 2022/02/17 21:06:56 by pmitsuko         ###   ########.fr        #
+#    Updated: 2022/02/19 15:40:39 by pmitsuko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME		=	pipex
 SRC			=	src
 OBJ			=	obj
 
-SRC_FILE	=	main.c error_handler.c utils.c
+SRC_FILE	=	main.c error_handler.c utils.c child_process.c parent_process.c \
+				find_exec_path.c run_cmd.c
 
 FILES		=	$(foreach file, $(SRC_FILE), $(SRC)/$(file))
 

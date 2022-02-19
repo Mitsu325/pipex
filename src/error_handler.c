@@ -6,7 +6,7 @@
 /*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 19:21:01 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/17 19:49:36 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/19 15:29:07 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ the process safely.
 void	error_safe_exit(char **env_path)
 {
 	free_split(env_path);
+	perror("Error");
+	exit(EXIT_FAILURE);
+}
+
+void	error_exit()
+{
 	perror("Error");
 	exit(EXIT_FAILURE);
 }

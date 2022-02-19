@@ -6,7 +6,7 @@
 /*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:29:25 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/19 11:29:43 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/19 16:13:01 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@
 # define STDOUT 1
 # define STDERR 2
 
-// Permissions file read and write
+# define DEL 127
+
+// Permissions file read, write and execute
 # define MODE_RWE 0777
 
 #include <unistd.h>
@@ -33,8 +35,18 @@
 
 # include "libft.h"
 
+void	child_process(char **argv, char **envp, int *fd);
+
+void	parent_process(char **argv, char **envp, int *fd);
+
+char	*find_exec_path(char *cmd, char **envp);
+
+int		run_cmd_child(char *argv_cmd, char **envp);
+int		run_cmd_parent(char *argv_cmd, char **envp);
+
 void	error_message(char *error_msg, char *help_msg);
 void	error_safe_exit(char **env_path);
+void	error_exit();
 
 char	**find_env_path(char **envp);
 void	free_split(char **table);
