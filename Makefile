@@ -6,7 +6,7 @@
 #    By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/13 21:09:44 by pmitsuko          #+#    #+#              #
-#    Updated: 2022/02/19 20:45:51 by pmitsuko         ###   ########.fr        #
+#    Updated: 2022/02/19 20:51:08 by pmitsuko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ OBJ			=	obj
 SUB_SRC		=	process utils
 SUB_UTILS	=	put str
 
-SRC_FILE	=	main.c error_handler.c utils.c find_exec_path.c run_cmd.c
-PROC_FILE	=	child_process.c parent_process.c
+SRC_FILE	=	main.c error_handler.c utils.c find_exec_path.c
+PROC_FILE	=	child_process.c parent_process.c run_cmd.c
 PUT_FILE	=	putchar_fd.c putstr_fd.c
 STR_FILE	=	split.c strchr.c strjoin.c strlen.c strnstr.c substr.c
 
