@@ -50,4 +50,12 @@ check_diff "3"
 ./pipex input_file "cat 123" cat my_output_file
 check_diff "4"
 
-rm input_file correct_output_file my_output_file
+< input_file cat | notexisting > correct_output_file
+./pipex input_file cat notexisting my_output_file
+check_diff "5"
+
+< input_file notexisting | cat > correct_output_file
+./pipex input_file notexisting cat my_output_file
+check_diff "6"
+
+# rm input_file correct_output_file my_output_file

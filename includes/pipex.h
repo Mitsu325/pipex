@@ -6,7 +6,7 @@
 /*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:29:25 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/17 08:46:39 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/19 11:29:43 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # define STDERR 2
 
 // Permissions file read and write
-# define MODE_RW 0666
+# define MODE_RWE 0777
 
 #include <unistd.h>
 #include <fcntl.h>
