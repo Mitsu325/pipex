@@ -58,8 +58,8 @@ check_diff "5"
 ./pipex input_file notexisting cat my_output_file
 check_diff "6"
 
-< deepthought.txt grep Now | /usr/bin/cat > correct_output_file
-./pipex deepthought.txt "grep Now" /usr/bin/cat my_output_file
+< ./assets/deepthought.txt grep Now | /usr/bin/cat > correct_output_file
+./pipex ./assets/deepthought.txt "grep Now" /usr/bin/cat my_output_file
 check_diff "7"
 
 rm input_file correct_output_file my_output_file
