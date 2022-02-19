@@ -6,7 +6,7 @@
 /*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 15:34:58 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/19 15:35:21 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/19 17:10:07 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*find_exec_path(char *cmd, char **envp)
 	int		i;
 
 	i = 0;
+	if (ft_strchr(cmd, '/'))
+		return (cmd);
 	env_path = find_env_path(envp);
 	while (*(env_path + i))
 	{
