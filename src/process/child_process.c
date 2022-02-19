@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   child_process.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 22:07:37 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/19 20:39:29 by pmitsuko         ###   ########.fr       */
+/*   Created: 2022/02/19 15:31:01 by pmitsuko          #+#    #+#             */
+/*   Updated: 2022/02/19 20:40:27 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* The child_process() function modify the stdin and stdout. Execute the cmd
+and the result will be used in the parent process.*/
+
 #include "pipex.h"
 
-int	main(int argc, char **argv, char **envp)
+void	child_process(char **argv, char **envp, int *fd)
 {
-	pid_t	pid;
-	int		fd[2];
-	int		status;
+	int	fd_input_file;
 
-	if (argc != 5)
-		error_message("Wrong arguments",
-		"./pipex input_file cmd1 cmd2 output_file");
-	if (pipe(fd) == -1)
-		error_exit();
-	pid = fork();
-	if (pid == -1)
-		error_exit();
-	if (pid == 0)
-		child_process(argv, envp, fd);
-	else
-		parent_process(argv, envp, fd);
-	waitpid(pid, &status, 0);
+	fd_input_file = open(argv[1], O_RDONLY, MODE_RWE);
+	dup2(fd_input_file, STDIN);
+	dup2(fd[1], STDOUT);
 	close(fd[0]);
 	close(fd[1]);
-	return (EXIT_SUCCESS);
+	run_cmd_child(argv[2], envp);
 }

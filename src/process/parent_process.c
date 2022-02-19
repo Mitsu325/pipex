@@ -6,14 +6,15 @@
 /*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 15:31:17 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/19 15:37:12 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/19 20:40:51 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
-
 /* The parent_process() function modify the stdin and stdout. Execute the cmd
 with the result of the child process as input value.*/
+
+#include "pipex.h"
+
 void	parent_process(char **argv, char **envp, int *fd)
 {
 	int	fd_output_file;

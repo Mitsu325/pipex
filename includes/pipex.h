@@ -6,7 +6,7 @@
 /*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:29:25 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/19 20:15:03 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/19 20:44:29 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@
 #include <sys/wait.h>
 
 # include "utils.h"
+# include "process.h"
 
 void	child_process(char **argv, char **envp, int *fd);
 

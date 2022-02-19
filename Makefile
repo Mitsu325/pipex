@@ -6,22 +6,23 @@
 #    By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/13 21:09:44 by pmitsuko          #+#    #+#              #
-#    Updated: 2022/02/19 20:31:23 by pmitsuko         ###   ########.fr        #
+#    Updated: 2022/02/19 20:45:51 by pmitsuko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	pipex
 SRC			=	src
 OBJ			=	obj
-SUB_SRC		=	utils
+SUB_SRC		=	process utils
 SUB_UTILS	=	put str
 
-SRC_FILE	=	main.c error_handler.c utils.c child_process.c parent_process.c \
-				find_exec_path.c run_cmd.c
+SRC_FILE	=	main.c error_handler.c utils.c find_exec_path.c run_cmd.c
+PROC_FILE	=	child_process.c parent_process.c
 PUT_FILE	=	putchar_fd.c putstr_fd.c
 STR_FILE	=	split.c strchr.c strjoin.c strlen.c strnstr.c substr.c
 
 FILES		=	$(foreach file, $(SRC_FILE), $(SRC)/$(file))
+FILES		+=	$(foreach file, $(PROC_FILE), $(SRC)/process/$(file))
 FILES		+=	$(foreach file, $(PUT_FILE), $(SRC)/utils/put/$(file))
 FILES		+=	$(foreach file, $(STR_FILE), $(SRC)/utils/str/$(file))
 
