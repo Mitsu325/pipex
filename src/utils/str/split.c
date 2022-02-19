@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmitsuko <pmitsuko@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 21:50:16 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/14 21:50:16 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/19 19:30:04 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* The split() function allocates (with malloc) and returns an array of strings
 obtained by splitting 's' using the character 'c' as a delimiter.
-The array must be ended by a NULL pointer.
-*/
+The array must be ended by a NULL pointer. */
 /* The array of new strings resulting from the split.
-NULL if the allocation fails.
-*/
+NULL if the allocation fails. */
 
-#include "libft.h"
+#include "pipex.h"
 
 static size_t	count_words(char const *s, char c)
 {
@@ -49,22 +47,22 @@ static void	make_words(char **words, char const *s, char c, size_t n_words)
 		s++;
 	while (n_words--)
 	{
-		ptr_c = ft_strchr(s, c);
+		ptr_c = strchr(s, c);
 		if (ptr_c != NULL)
 		{
-			*words = ft_substr(s, 0, ptr_c - s);
+			*words = substr(s, 0, ptr_c - s);
 			while (*ptr_c && *ptr_c == c)
 				ptr_c++;
 			s = ptr_c;
 		}
 		else
-			*words = ft_substr(s, 0, ft_strlen(s) + 1);
+			*words = substr(s, 0, ft_strlen(s) + 1);
 		words++;
 	}
 	*words = NULL;
 }
 
-char	**ft_split(char const *s, char c)
+char	**split(char const *s, char c)
 {
 	size_t	num_words;
 	char	**words;

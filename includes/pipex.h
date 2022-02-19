@@ -6,7 +6,7 @@
 /*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:29:25 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/19 16:13:01 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/19 20:15:03 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,12 @@
 
 #include <unistd.h>
 #include <fcntl.h>
-# include <stdlib.h>
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
 
-# include "libft.h"
+# include "utils.h"
 
 void	child_process(char **argv, char **envp, int *fd);
 

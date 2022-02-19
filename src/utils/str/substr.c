@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmitsuko <pmitsuko@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 22:08:21 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/14 22:08:21 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/19 20:12:26 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* The substr() function allocates (with malloc) and returns a substring
 from the string 's'.
-The substring begins at index 'start' and is of maximum size 'len'.
-*/
-/* Return the substring. NULL if the allocation fails.
-*/
+The substring begins at index 'start' and is of maximum size 'len'. */
+/* Return the substring. NULL if the allocation fails. */
 
-#include "libft.h"
+#include "pipex.h"
 
-char	*ft_substr(char const *s, int start, int len)
+char	*substr(char const *s, int start, int len)
 {
 	char	*substr;
 	char	*new_str;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:16:34 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/17 20:11:13 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/19 19:30:04 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 which is the result of the concatenation of 's1' and 's2'. */
 /* Return the new string. NULL if the allocation fails. */
 
-#include "libft.h"
+#include "pipex.h"
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*strjoin(char *s1, char *s2)
 {
 	char	*new_str;
 	int		i;

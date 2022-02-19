@@ -6,7 +6,7 @@
 /*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 21:55:58 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/19 15:38:37 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/19 20:12:50 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ char	**find_env_path(char **envp)
 	int	i;
 
 	i = 0;
-	while (ft_strnstr(envp[i], "PATH", 4) == NULL)
+	while (strnstr(envp[i], "PATH", 4) == NULL)
 		i++;
-	return (ft_split(envp[i] + 5, ':'));
+	return (split(envp[i] + 5, ':'));
 }
 
 /* The free_split() function dynamically de-allocate the memory from a table.*/

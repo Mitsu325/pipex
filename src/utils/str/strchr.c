@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmitsuko <pmitsuko@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 21:59:51 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/14 21:59:51 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/19 19:30:04 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* The strchr() function returns a pointer to the first occurrence of the
-char 'c' in string 's'.
-*/
+char 'c' in string 's'. */
 /* Return a pointer to the corresponding character,
-or NULL if the character was not found.
-*/
+or NULL if the character was not found. */
 
-#include "libft.h"
+#include "pipex.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*strchr(const char *s, int c)
 {
 	char	*str;
 
