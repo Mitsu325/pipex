@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* The ft_strlen() function calculates the length of the character string 'str', 
+/* The ft_strlen() function calculates the length of the character string 'str',
 without count the trailing "\0" null byte. */
 /* Returns the number of characters in the string s. */
 

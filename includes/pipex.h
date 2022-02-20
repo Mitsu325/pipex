@@ -28,12 +28,12 @@
 // Permissions file read, write and execute
 # define MODE_RWE 0777
 
-#include <unistd.h>
-#include <fcntl.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <sys/wait.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include <stdlib.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <sys/wait.h>
 
 # include "utils.h"
 # include "process.h"

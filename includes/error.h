@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: pmitsuko <pmitsuko@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 20:53:58 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/19 21:33:41 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/20 16:12:34 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@
 void	cmd_not_found(char **cmd, int pid);
 void	error_message(char *error_msg, char *help_msg);
 void	error_safe_exit(char **env_path);
-void	error_exit();
+void	error_exit(void);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parent_process.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: pmitsuko <pmitsuko@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 15:31:17 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/19 21:35:19 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/20 16:15:06 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ with the result of the child process as input value.*/
 void	parent_process(char **argv, char **envp, int *fd)
 {
 	int	fd_output_file;
-	int run_cmd_status;
+	int	run_cmd_status;
 
 	fd_output_file = open(argv[4], O_WRONLY | O_TRUNC | O_CREAT, MODE_RWE);
 	if (fd_output_file == -1)
