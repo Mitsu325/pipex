@@ -6,7 +6,7 @@
 /*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 19:26:46 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/19 21:04:07 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/19 21:39:42 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 void	putchar_fd(char ch, int fd);
 void	putstr_fd(char *str, int fd);
 
+void	free_split(char **table);
 char	**split(char const *s, char c);
 char	*strchr(const char *s, int c);
 int		ft_strlen(const char *str);

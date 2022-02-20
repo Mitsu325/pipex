@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.h                                            :+:      :+:    :+:   */
+/*   find_env_path.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/19 20:53:58 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/19 21:33:41 by pmitsuko         ###   ########.fr       */
+/*   Created: 2022/02/19 21:36:47 by pmitsuko          #+#    #+#             */
+/*   Updated: 2022/02/19 21:37:36 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERROR_H
-# define ERROR_H
+/* The find_env_path() function find the directories stored in the PATH 
+environment variable. */
+/* Return the array of directories.*/
 
-void	cmd_not_found(char **cmd, int pid);
-void	error_message(char *error_msg, char *help_msg);
-void	error_safe_exit(char **env_path);
-void	error_exit();
+#include "pipex.h"
 
-#endif
+char	**find_env_path(char **envp)
+{
+	int	i;
+
+	i = 0;
+	while (strnstr(envp[i], "PATH", 4) == NULL)
+		i++;
+	return (split(envp[i] + 5, ':'));
+}

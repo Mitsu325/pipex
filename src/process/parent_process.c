@@ -6,7 +6,7 @@
 /*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 15:31:17 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/19 20:40:51 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/19 21:35:19 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ void	parent_process(char **argv, char **envp, int *fd)
 	dup2(fd_output_file, STDOUT);
 	close(fd[0]);
 	close(fd[1]);
-	run_cmd_status = run_cmd_parent(argv[3], envp);
+	run_cmd_status = run_cmd(argv[3], envp, PARENT_PID);
 	if (run_cmd_status)
 	{
 		write(1, "", 1);
-		exit(EXIT_FAILURE);
+		exit(EX_FAILURE);
 	}
 }

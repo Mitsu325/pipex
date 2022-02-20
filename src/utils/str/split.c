@@ -39,7 +39,7 @@ static size_t	count_words(char const *s, char c)
 	return (word_count);
 }
 
-static void	make_words(char **words, char const *s, char c, size_t n_words)
+static void		make_words(char **words, char const *s, char c, size_t n_words)
 {
 	char	*ptr_c;
 
@@ -62,7 +62,7 @@ static void	make_words(char **words, char const *s, char c, size_t n_words)
 	*words = NULL;
 }
 
-char	**split(char const *s, char c)
+char			**split(char const *s, char c)
 {
 	size_t	num_words;
 	char	**words;

@@ -6,14 +6,15 @@
 /*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 15:34:58 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/19 20:12:07 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/19 21:36:03 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
-
 /* The find_exec_path() function find executable path of the 'cmd'. */
 /* Return the executable path. NULL if not find. */
+
+#include "pipex.h"
+
 char	*find_exec_path(char *cmd, char **envp)
 {
 	char	**env_path;

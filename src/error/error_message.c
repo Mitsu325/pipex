@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.h                                            :+:      :+:    :+:   */
+/*   error_message.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/19 20:53:58 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/19 21:33:41 by pmitsuko         ###   ########.fr       */
+/*   Created: 2022/02/19 21:17:19 by pmitsuko          #+#    #+#             */
+/*   Updated: 2022/02/19 21:17:39 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERROR_H
-# define ERROR_H
+/* The error_message() function print the error and helper message. */
 
-void	cmd_not_found(char **cmd, int pid);
-void	error_message(char *error_msg, char *help_msg);
-void	error_safe_exit(char **env_path);
-void	error_exit();
+#include "pipex.h"
 
-#endif
+void	error_message(char *error_msg, char *help_msg)
+{
+	putstr_fd("\e[91mError: ", STDERR);
+	putstr_fd(error_msg, STDERR);
+	putstr_fd("\n\e[0m", STDERR);
+	putstr_fd("Example: ", STDOUT);
+	putstr_fd(help_msg, STDOUT);
+	putstr_fd("\n", STDOUT);
+	exit(EX_FAILURE);
+}

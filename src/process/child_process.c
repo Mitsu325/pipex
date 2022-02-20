@@ -6,7 +6,7 @@
 /*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 15:31:01 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/19 20:40:27 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/19 21:32:04 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	child_process(char **argv, char **envp, int *fd)
 	dup2(fd[1], STDOUT);
 	close(fd[0]);
 	close(fd[1]);
-	run_cmd_child(argv[2], envp);
+	run_cmd(argv[2], envp, CHILD_PID);
 }
