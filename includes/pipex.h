@@ -6,7 +6,7 @@
 /*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:29:25 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/19 20:54:54 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/19 21:04:09 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@
 
 #include <unistd.h>
 #include <fcntl.h>
-#include <stdio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>

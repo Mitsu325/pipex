@@ -6,7 +6,7 @@
 /*   By: pmitsuko <pmitsuko@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:07:37 by pmitsuko          #+#    #+#             */
-/*   Updated: 2022/02/19 20:39:29 by pmitsuko         ###   ########.fr       */
+/*   Updated: 2022/02/19 21:01:48 by pmitsuko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv, char **envp)
 
 	if (argc != 5)
 		error_message("Wrong arguments",
-		"./pipex input_file cmd1 cmd2 output_file");
+			"./pipex input_file cmd1 cmd2 output_file");
 	if (pipe(fd) == -1)
 		error_exit();
 	pid = fork();
